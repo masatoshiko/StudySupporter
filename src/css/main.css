@@ -1,0 +1,50 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+* {
+    margin: 0;
+    -webkit-tap-highlight-color:rgba(0,0,0,0);
+}
+
+html, body {
+    height: 100vh;
+    width: 100vw;
+    box-sizing: border-box;
+}
+
+.monospace {
+    font-family: 'Roboto Mono', monospace;
+}
+
+@layer components {
+    .btn {
+        @apply shadow-md active:shadow p-3 duration-150 m-1 md:m-2 rounded border
+    }
+
+    .menubar-btn {
+        @apply duration-150 px-3 h-full
+    }
+
+    .workbgm-action-bgm {
+        @apply shadow-md active:shadow px-3 py-1 duration-150 rounded border text-sm my-1
+    }
+
+    .workbgm-list {
+        @apply my-2 border rounded items-center flex
+    }
+}
+
+/* animation */
+.animation-opacity {
+    transition-property: opacity, visibility;
+    transition-duration: .150s;
+    transition-timing-function: ease-out;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.animation-opacity.is-show {
+    opacity: 1;
+    visibility: visible;
+}
