@@ -5,7 +5,7 @@ module.exports = {
     entry: './src/app/main.ts',
 
     output: {
-        path: path.join(__dirname, 'docs'),
+        path: path.join(__dirname, 'public'),
         filename: 'bundle.js'
     },
 
@@ -23,7 +23,7 @@ module.exports = {
 
     devServer: {
         static: {
-            directory: path.join(__dirname, 'docs')
+            directory: path.join(__dirname, 'public')
         },
         compress: false,
         port: 8080,

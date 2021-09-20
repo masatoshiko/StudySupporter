@@ -4,10 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build-css": "tailwindcss -i src/css/main.css -o docs/tailwind.css",
-    "watch-css": "tailwindcss -i src/css/main.css -o docs/tailwind.css -w",
+    "build-css": "tailwindcss -i src/css/main.css -o public/tailwind.css",
+    "watch-css": "tailwindcss -i src/css/main.css -o public/tailwind.css -w",
     "build-ts": "webpack",
-    "watch-ts": "webpack-dev-server"
+    "watch-ts": "webpack-dev-server",
+    "watch-ts2": "webpack --watch"
   },
   "author": "Masatoshiko",
   "license": "MIT",

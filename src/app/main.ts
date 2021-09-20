@@ -1,10 +1,20 @@
 import { OverMenu } from "./over_menu";
-import { DOMWorkBGM } from "./dom/workbgm";
+import { WorkBGMManager } from "./manager/workbgm";
+import { TimerManager } from "./manager/timer";
+import { InputHelper } from "./input_helper";
+import { MainUIDOM } from "./dom/main_ui";
+import { TimerSettingDOM } from "./dom/timersetting";
 
 window.onload = () => {
     OverMenu.init();
-    DOMWorkBGM.appendWorkBGM("【コマンドー】シュワぴょい伝説【 #玄田哲章生誕祭2021 】", "じごあく", "https://i.ytimg.com/vi/m6Yx7eNxugI/mqdefault.jpg", "22222");
-    DOMWorkBGM.appendWorkBGM("や", "田所浩二", "https://i.ytimg.com/vi/m6Yx7eNxugI/mqdefault.jpg", "22122");
+    InputHelper.init();
+    WorkBGMManager.init();
+    TimerManager.init();
 
-    DOMWorkBGM.getWorkBGM("22122");
+    let start_btn = document.getElementById("start");
+    start_btn!.addEventListener("click", () => {
+        if (MainUIDOM.is_stop_button) TimerManager.pauseTimer();
+        else if (MainUIDOM.is_paused) TimerManager.resumeTimer();
+        else TimerManager.startTimer();
+    });
 }

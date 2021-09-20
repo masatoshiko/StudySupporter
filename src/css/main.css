@@ -17,6 +17,12 @@ html, body {
     font-family: 'Roboto Mono', monospace;
 }
 
+@layer base {
+    h2 {
+        @apply text-xl my-2
+    }
+}
+
 @layer components {
     .btn {
         @apply shadow-md active:shadow p-3 duration-150 m-1 md:m-2 rounded border
@@ -32,6 +38,14 @@ html, body {
 
     .workbgm-list {
         @apply my-2 border rounded items-center flex
+    }
+
+    input {
+        @apply border-b m-1 p-2 flex-grow border-gray-300 hover:border-gray-500 duration-150 focus:border-blue-500 focus:border-b-2 focus:duration-0 outline-none
+    }
+
+    .icon-btn {
+        @apply shadow-md active:shadow p-2 px-3 duration-150 m-1 rounded placeholder-gray-300
     }
 }
 

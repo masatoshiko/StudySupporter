@@ -1,7 +1,7 @@
 module.exports = {
   mode: "jit",
   purge: [
-    "./docs/*.html",
+    "./public/*.html",
     "./src/app/**/*.ts",
   ],
   darkMode: false, // or 'media' or 'class'
@@ -9,6 +9,13 @@ module.exports = {
     extend: {
       boxShadow: ["active"]
     },
+  },
+  theme: {
+    extend: {
+      transitionDuration: {
+       '0': '0ms',
+      }
+    }
   },
   plugins: [],
 }
